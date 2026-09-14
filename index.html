@@ -5,438 +5,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hotel Aurora | Tu estancia comienza aquí</title>
+    <!-- Título que se ve en la pestaña del navegador -->
+    <title>Radisson Blue Resort Gran Canaria</title>
 
-    <meta name="description" content="Descubre Hotel Aurora, un espacio pensado para disfrutar de una estancia única.">
-    <link rel="icon" type="image/x-icon" href="/assets/icons/download.ico">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Metadatos para SEO y Marketing -->
+    <meta name="description" content="Descubre el Radisson Blue Resort Gran Canaria, un espacio de lujo y tranquilidad frente al mar en Gran Canaria.">
+    <meta name="keywords" content="Radisson Blue, Gran Canaria, hotel resort, vacaciones, reserva hotel">
+
+    <!-- Ícono e integración de la plantilla CSS -->
+    <link rel="icon" type="image/x-icon" href="Icono/Icon Blue.png">
+    <link rel="stylesheet" href="Estilo/style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <div id="header"></div>
-
+    <!-- CABECERA DE LA WEB -->
+    <header id="site-header">
+        <div class="container">
+            <div class="logo">Radisson Blue Resort</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto y Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
 
-        <!-- =====================================================
-             HERO
-             ===================================================== -->
-
+        <!-- 1. SECCIÓN HERO / PORTADA -->
         <section id="inicio" class="hero">
-
             <div class="hero-content">
-
-                <p class="eyebrow">
-                    Bienvenido a Hotel Aurora
-                </p>
-
-                <h1>
-                    Una estancia para recordar
-                </h1>
-
-                <p>
-                    Descubre un lugar donde el confort, la tranquilidad y las experiencias únicas se encuentran.
-                </p>
-
+                <p class="eyebrow">Bienvenido a Radisson Blue Resort Gran Canaria</p>
+                <h1>Una estancia inolvidable frente al mar</h1>
+                <p>Descubre un refugio de lujo, confort y tranquilidad en la costa sur de Gran Canaria.</p>
+                
                 <div class="hero-actions">
-
-                    <a href="#reservar" class="button">
-                        Reservar ahora
-                    </a>
-
-                    <a href="#habitaciones" class="button button-secondary">
-                        Explorar habitaciones
-                    </a>
-
+                    <a href="#reservar" class="button">Reservar ahora</a>
+                    <a href="#habitaciones" class="button button-secondary">Explorar habitaciones</a>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             RESERVAS
-             ===================================================== -->
-
+        <!-- 2. SECCIÓN DE RESERVAS (Variables de interacción) -->
         <section id="reservar" class="booking">
-
             <div class="container">
-
                 <header>
-                    <p class="eyebrow">
-                        Planifica tu estancia
-                    </p>
-
-                    <h2>
-                        Reserva tu habitación
-                    </h2>
+                    <p class="eyebrow">Planifica tu estancia</p>
+                    <h2>Reserva tu habitación</h2>
                 </header>
 
-
                 <form action="#" method="get">
-
                     <div>
-                        <label for="check-in">
-                            Entrada
-                        </label>
-
+                        <label for="check-in">Entrada</label>
                         <input type="date" id="check-in" name="check-in" required>
                     </div>
 
-
                     <div>
-                        <label for="check-out">
-                            Salida
-                        </label>
-
+                        <label for="check-out">Salida</label>
                         <input type="date" id="check-out" name="check-out" required>
                     </div>
 
-
                     <div>
-                        <label for="guests">
-                            Huéspedes
-                        </label>
-
+                        <label for="guests">Huéspedes</label>
                         <select id="guests" name="guests">
-
-                            <option value="1">
-                                1 huésped
-                            </option>
-
-                            <option value="2" selected>
-                                2 huéspedes
-                            </option>
-
-                            <option value="3">
-                                3 huéspedes
-                            </option>
-
-                            <option value="4">
-                                4 huéspedes
-                            </option>
-
-                            <option value="5">
-                                5 huéspedes
-                            </option>
-
+                            <option value="1">1 huésped</option>
+                            <option value="2" selected>2 huéspedes</option>
+                            <option value="3">3 huéspedes</option>
+                            <option value="4">4 huéspedes</option>
                         </select>
                     </div>
 
-
-                    <button type="submit">
-                        Comprobar disponibilidad
-                    </button>
-
+                    <button type="submit">Comprobar disponibilidad</button>
                 </form>
-
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             INTRODUCCIÓN
-             ===================================================== -->
-
+        <!-- 3. INTRODUCCIÓN AL HOTEL -->
         <section id="hotel" class="introduction">
-
             <div class="container">
-
                 <div class="section-content">
-
-                    <p class="eyebrow">
-                        Hotel Aurora
-                    </p>
-
-                    <h2>
-                        Tu refugio lejos de casa
-                    </h2>
-
-                    <p>
-                        En Hotel Aurora hemos creado un espacio pensado para desconectar, descansar y disfrutar.
-                    </p>
-
-                    <p>
-                        Desde habitaciones cuidadosamente diseñadas hasta una gastronomía basada en productos locales, cada detalle está pensado para hacer especial tu estancia.
-                    </p>
-
-                    <a href="#" class="text-link">
-                        Descubre nuestro hotel →
-                    </a>
-
+                    <p class="eyebrow">Radisson Blue Gran Canaria</p>
+                    <h2>Tu refugio de lujo junto al Atlántico</h2>
+                    <p>En el Radisson Blue Resort hemos creado un espacio exclusivo pensado para desconectar y disfrutar del mejor clima de las Islas Canarias.</p>
+                    <p>Desde habitaciones con vistas panorámicas al océano hasta una gastronomía internacional de primer nivel.</p>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             HABITACIONES
-             ===================================================== -->
-
+        <!-- 4. CATÁLOGO DE HABITACIONES -->
         <section id="habitaciones" class="rooms">
-
             <div class="container">
-
                 <header class="section-header">
-
-                    <p class="eyebrow">
-                        Descansa a tu manera
-                    </p>
-
-                    <h2>
-                        Nuestras habitaciones
-                    </h2>
-
-                    <p>
-                        Espacios diseñados para que cada noche sea tan cómoda como especial.
-                    </p>
-
+                    <p class="eyebrow">Descansa a tu manera</p>
+                    <h2>Nuestras Habitaciones</h2>
+                    <p>Espacios diseñados para que cada noche sea tan cómoda como especial.</p>
                 </header>
 
-
                 <div class="room-list">
-
                     <article class="room-card">
-
                         <div class="room-image">
-
-                            <img src="assets/images/habitacion-estandar.png" alt="Habitación Deluxe del Hotel Aurora">
-
+                            <img src="Imagenes/habitacion_ocean_superior.png" alt="Suite Ocean Superior">
                         </div>
-
-
                         <div class="room-content">
-
-                            <h3>
-                                Habitación Deluxe
-                            </h3>
-
-                            <p>
-                                Un espacio elegante y acogedor para disfrutar de una estancia confortable.
-                            </p>
-
+                            <h3>Suite Ocean Superior</h3>
+                            <p>Elegancia y confort con balcón privado orientado al Atlántico.</p>
                             <ul>
                                 <li>2 huéspedes</li>
-                                <li>Cama king size</li>
-                                <li>Vista al jardín</li>
+                                <li>Cama King Size</li>
+                                <li>Vistas al océano</li>
                             </ul>
-
-                            <a href="#">
-                                Ver habitación →
-                            </a>
-
+                            <a href="habitaciones.html">Ver Suite →</a>
                         </div>
-
                     </article>
 
-
                     <article class="room-card">
-
                         <div class="room-image">
-
-                            <img src="assets/images/suite.png" alt="Suite Aurora">
-
+                            <img src="Imagenes/junior_suite_deluxe.png" alt="Junior Suite Deluxe">
                         </div>
-
-
                         <div class="room-content">
-
-                            <h3>
-                                Suite Aurora
-                            </h3>
-
-                            <p>
-                                Más espacio, más privacidad y todos los detalles para una experiencia especial.
-                            </p>
-
+                            <h3>Junior Suite Deluxe</h3>
+                            <p>Amplitud, privacidad y terraza con vistas exclusivas.</p>
                             <ul>
                                 <li>3 huéspedes</li>
                                 <li>Salón independiente</li>
-                                <li>Terraza privada</li>
+                                <li>Terraza con jacuzzi</li>
                             </ul>
-
-                            <a href="#">
-                                Ver suite →
-                            </a>
-
+                            <a href="habitaciones.html">Ver suite →</a>
                         </div>
-
                     </article>
-
 
                     <article class="room-card">
-
                         <div class="room-image">
-
-                            <img src="assets/images/suite-premium.png" alt="Suite Premium del Hotel Aurora">
-
+                            <img src="Imagenes/suite_presidencial.png" alt="Radisson Suite Presidencial">
                         </div>
-
-
                         <div class="room-content">
-
-                            <h3>
-                                Suite Premium
-                            </h3>
-
-                            <p>
-                                Nuestra habitación más exclusiva para quienes buscan una estancia extraordinaria.
-                            </p>
-
+                            <h3>Suite Presidencial</h3>
+                            <p>La experiencia más exclusiva del resort para estancias extraordinarias.</p>
                             <ul>
                                 <li>4 huéspedes</li>
-                                <li>Vistas panorámicas</li>
-                                <li>Terraza privada</li>
+                                <li>Vista panorámica 180°</li>
+                                <li>Servicio VIP</li>
                             </ul>
-
-                            <a href="#">
-                                Ver suite →
-                            </a>
-
+                            <a href="habitaciones.html">Ver suite →</a>
                         </div>
-
                     </article>
-
                 </div>
 
-
+                <!-- Botón final para explorar todo el catálogo -->
                 <div class="section-action">
-
-                    <a href="#">
-                        Ver todas las habitaciones
-                    </a>
-
+                    <a href="habitaciones.html">Ver todas las habitaciones →</a>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =====================================================
-             EXPERIENCIAS
-             ===================================================== -->
-
-        <section id="experiencias" class="experiences">
-
-            <div class="container">
-
-                <header class="section-header">
-
-                    <p class="eyebrow">
-                        Mucho más que dormir
-                    </p>
-
-                    <h2>
-                        Vive la experiencia Aurora
-                    </h2>
-
-                </header>
-
-
-                <div class="experience-list">
-
-                    <article>
-
-                        <h3>
-                            Gastronomía
-                        </h3>
-
-                        <p>
-                            Sabores locales, productos de temporada y una cocina que invita a quedarse.
-                        </p>
-
-                        <a href="#">
-                            Descubrir →
-                        </a>
-
-                    </article>
-
-
-                    <article>
-
-                        <h3>
-                            Bienestar
-                        </h3>
-
-                        <p>
-                            Relájate y recupera el equilibrio en nuestro espacio dedicado al bienestar.
-                        </p>
-
-                        <a href="#">
-                            Descubrir →
-                        </a>
-
-                    </article>
-
-
-                    <article>
-
-                        <h3>
-                            Experiencias
-                        </h3>
-
-                        <p>
-                            Excursiones, actividades y propuestas para descubrir el destino de una forma diferente.
-                        </p>
-
-                        <a href="#">
-                            Descubrir →
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CTA
-             ===================================================== -->
-
+        <!-- 5. SECCIÓN CTA (Aquí va la foto de fondo cta_hotel.png) -->
         <section class="cta">
-
             <div class="container">
-
-                <p class="eyebrow">
-                    ¿Preparado?
-                </p>
-
-                <h2>
-                    Tu próxima escapada empieza aquí.
-                </h2>
-
-                <p>
-                    Reserva tu estancia en Hotel Aurora y descubre todo lo que tenemos preparado para ti.
-                </p>
-
-                <a href="#reservar" class="button">
-                    Reservar ahora
-                </a>
-
+                <p class="eyebrow">¿Listo para vivir la experiencia?</p>
+                <h2>Reserva tu estancia en Radisson Blue Resort</h2>
+                <p>Disfruta de tarifas exclusivas y atención personalizada reservando directamente en nuestra web.</p>
+                <a href="#reservar" class="button">Reservar ahora</a>
             </div>
-
         </section>
 
     </main>
 
+    <!-- PIE DE PÁGINA -->
+<footer id="site-footer">
+    <div class="container">
 
-    <!-- Footer -->
-    <div id="footer"></div>
+        <div class="footer-main">
 
+            <!-- Marca y lema -->
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    RADISSON BLUE
+                </a>
+                <p>Tu refugio de lujo y tranquilidad frente al Atlántico.</p>
+            </div>
 
-    <!-- Componentes -->
-    <script src="js/components.js"></script>
+            <!-- Navegación del pie de página -->
+            <nav aria-label="Navegación del pie de página">
+                <h2>Navegación</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto y Reservas</a></li>
+                </ul>
+            </nav>
+
+            <!-- Datos de contacto reales/adaptados -->
+            <div class="footer-contact">
+                <h2>Contacto</h2>
+                <address>
+                    <p>
+                        Barranco de la Verga, s/n<br>
+                        35129 Patalavaca, Gran Canaria<br>
+                        España
+                    </p>
+                    <p><a href="tel:+34928150400">+34 928 150 400</a></p>
+                    <p><a href="mailto:info.gran.canaria@radissonblue.com">info.gran.canaria@radissonblue.com</a></p>
+                </address>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <h2>Síguenos</h2>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Enlaces legales y derechos -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Radisson Blue Resort Gran Canaria. Todos los derechos reservados.</p>
+            <nav aria-label="Información legal">
+                <ul>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Aviso legal</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</footer>
 
 </body>
-
 </html>

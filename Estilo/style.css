@@ -12,8 +12,8 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #26332d;
-    background: #f7f5f0;
+    color: var(--color-dark);
+    background: var(--color-cream);
     line-height: 1.6;
 }
 
@@ -44,15 +44,24 @@ select {
     ========================================================= */
 
 :root {
-    --color-dark: #24332c;
-    --color-dark-2: #18231e;
-    --color-green: #53695b;
-    --color-green-light: #dfe6df;
+    /* Cambiamos el verde oscuro por Azul Marino Radisson Blu */
+    --color-dark: #0b1d3a;
+    --color-dark-2: #071326;
+
+    /* Cambiamos el verde principal por Azul Atlántico */
+    --color-green: #1a4373;
+    --color-green-light: #dce6f2;
+
+    /* Mantenemos los tonos marfil y arena de Gran Canaria */
     --color-cream: #f7f5f0;
     --color-white: #ffffff;
     --color-sand: #e9e2d5;
-    --color-border: #d8d4ca;
-    --color-text-light: #e9eee9;
+
+    /* Detalle de bordes y texto claro en azul suave */
+    --color-border: #cbd7e4;
+    --color-text-light: #e9f0f8;
+
+    /* ESTO SE QUEDA IGUAL (Para mantener centrado y letras) */
     --max-width: 1180px;
     --serif: Georgia, "Times New Roman", serif;
     --sans: Arial, Helvetica, sans-serif;
@@ -124,7 +133,7 @@ h2 {
 
 
 /* =========================================================
-    HEADER
+    HEADER - Cabecera y navegación
     ========================================================= */
 
 #site-header {
@@ -194,7 +203,7 @@ h2 {
 
 
 /* =========================================================
-    HERO
+    HERO - Imagen principal / Portada
     ========================================================= */
 
 .hero {
@@ -202,7 +211,7 @@ h2 {
     min-height: 720px;
     display: flex;
     align-items: center;
-    background: linear-gradient( 90deg, rgba(15, 25, 20, 0.72), rgba(15, 25, 20, 0.28)), url("assets/images/hotel-hero.jpg") center / cover no-repeat;
+    background: linear-gradient( 90deg, rgba(11, 29, 58, 0.8), rgba(11, 29, 58, 0.35)), url("../Imagenes/hotel_hero.png") center / cover no-repeat;
     color: var(--color-white);
 }
 
@@ -238,7 +247,7 @@ h2 {
 
 
 /* =========================================================
-    BOOKING
+    BOOKING - Formulario de reservas
     ========================================================= */
 
 .booking {
@@ -333,7 +342,7 @@ h2 {
 
 .section-content p:not(.eyebrow) {
     margin-bottom: 18px;
-    color: #59645e;
+    color: #4a5568;
     font-size: 1.05rem;
 }
 
@@ -349,7 +358,7 @@ h2 {
 
 
 /* =========================================================
-    ROOMS
+    ROOMS - Catálogo de habitaciones
     ========================================================= */
 
 .rooms {
@@ -364,7 +373,7 @@ h2 {
 
 .section-header p:last-child {
     margin-top: 22px;
-    color: #657067;
+    color: #4a5568;
 }
 
 .room-list {
@@ -405,7 +414,7 @@ h2 {
 
 .room-content p {
     margin-bottom: 20px;
-    color: #687169;
+    color: #4a5568;
     font-size: 0.95rem;
 }
 
@@ -448,7 +457,7 @@ h2 {
 
 
 /* =========================================================
-    EXPERIENCES
+    EXPERIENCES - Sección de experiencias
     ========================================================= */
 
 .experiences {
@@ -458,7 +467,7 @@ h2 {
 }
 
 .experiences .eyebrow {
-    color: #aebcad;
+    color: var(--color-green-light);
 }
 
 .experience-list {
@@ -501,12 +510,12 @@ h2 {
 
 
 /* =========================================================
-    CTA
+    CTA - Llamada a la acción
     ========================================================= */
 
 .cta {
     padding: 140px 0;
-    background: linear-gradient( rgba(235, 230, 218, 0.88), rgba(235, 230, 218, 0.88)), url("assets/images/cta-hotel.jpg") center / cover no-repeat;
+    background: linear-gradient( rgba(238, 247, 255, 0.75), rgba(232, 238, 245, 0.75)), url("../Imagenes/cta_hotel.png") center / cover no-repeat;
     text-align: center;
 }
 
@@ -521,12 +530,12 @@ h2 {
 .cta p:not(.eyebrow) {
     max-width: 580px;
     margin: 0 auto 32px;
-    color: #606960;
+    color: #4a5568;
 }
 
 
 /* =========================================================
-    FOOTER
+    FOOTER - Pie de página
     ========================================================= */
 
 #site-footer {
