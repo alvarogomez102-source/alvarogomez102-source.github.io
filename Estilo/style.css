@@ -605,6 +605,322 @@ h2 {
 
 
 /* =========================================================
+    PAGE HEADER - Cabecera de páginas interiores
+    ========================================================= */
+
+.page-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 420px;
+    padding-top: 88px;
+    background: linear-gradient(90deg, rgba(11, 29, 58, 0.8), rgba(11, 29, 58, 0.35)), var(--page-header-image) center / cover no-repeat;
+    color: var(--color-white);
+    text-align: left;
+}
+
+.page-header .eyebrow {
+    color: #e3eadf;
+}
+
+.page-header h1 {
+    max-width: 620px;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+}
+
+.page-header p:not(.eyebrow) {
+    max-width: 540px;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* =========================================================
+    ROOMS FULL - Catálogo detallado de habitaciones
+    ========================================================= */
+
+.rooms-full {
+    padding: 120px 0;
+}
+
+.room-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.room-detail:not(:last-child) {
+    margin-bottom: 110px;
+}
+
+.room-detail:nth-child(even) .room-detail-image {
+    order: 2;
+}
+
+.room-detail-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.room-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-detail-content h3 {
+    margin-bottom: 18px;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.room-detail-content>p {
+    margin-bottom: 22px;
+    color: #4a5568;
+}
+
+.room-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.room-detail-meta li {
+    padding: 6px 12px;
+    background: var(--color-green-light);
+    color: var(--color-green);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.room-detail-amenities {
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.room-detail-amenities li {
+    position: relative;
+    padding-left: 20px;
+    color: #4a5568;
+    font-size: 0.92rem;
+}
+
+.room-detail-amenities li::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--color-green);
+}
+
+.room-detail-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 22px;
+    border-top: 1px solid var(--color-border);
+}
+
+.room-detail-price span {
+    display: block;
+    color: #4a5568;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.room-detail-price strong {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    color: var(--color-dark);
+}
+
+
+/* =========================================================
+    SERVICES - Cuadrícula de servicios
+    ========================================================= */
+
+.services {
+    padding: 120px 0;
+    background: var(--color-sand);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    padding: 42px 32px;
+    background: var(--color-white);
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 24px;
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+}
+
+.service-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: #4a5568;
+    font-size: 0.92rem;
+}
+
+.experiences h2 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+    CONTACT - Página de contacto
+    ========================================================= */
+
+.contact-section {
+    padding: 120px 0;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.contact-info h2 {
+    margin-bottom: 24px;
+}
+
+.contact-info>p {
+    margin-bottom: 36px;
+    color: #4a5568;
+}
+
+.contact-info-block {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.contact-info-block:last-child {
+    border-bottom: none;
+}
+
+.contact-info-block h3 {
+    margin-bottom: 10px;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-green);
+}
+
+.contact-info-block p,
+.contact-info-block a {
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-field {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-dark);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-green);
+}
+
+.contact-form button {
+    width: 100%;
+    height: 54px;
+    border: 1px solid var(--color-dark);
+    background: var(--color-dark);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all var(--transition);
+}
+
+.contact-form button:hover {
+    background: var(--color-green);
+    border-color: var(--color-green);
+}
+
+.contact-map {
+    margin-top: 100px;
+    aspect-ratio: 21 / 8;
+    overflow: hidden;
+    filter: grayscale(20%);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+
+/* =========================================================
     RESPONSIVE
     ========================================================= */
 
@@ -642,6 +958,20 @@ h2 {
     }
     .footer-main {
         grid-template-columns: 1fr 1fr;
+    }
+    .room-detail {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .room-detail:nth-child(even) .room-detail-image {
+        order: 0;
+    }
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
 }
 
@@ -703,5 +1033,31 @@ h2 {
     }
     .footer-bottom nav ul {
         flex-wrap: wrap;
+    }
+    .page-header {
+        min-height: 320px;
+    }
+    .rooms-full,
+    .services,
+    .services-highlight,
+    .contact-section {
+        padding: 70px 0;
+    }
+    .room-detail-amenities {
+        grid-template-columns: 1fr;
+    }
+    .room-detail-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .room-detail-footer .button {
+        width: 100%;
+    }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }
