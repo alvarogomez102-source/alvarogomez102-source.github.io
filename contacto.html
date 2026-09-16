@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que se ve en la pestaña del navegador -->
+    <title>Contacto y Reservas | Radisson Blue Resort Gran Canaria</title>
+
+    <!-- Metadatos para SEO y Marketing -->
+    <meta name="description" content="Reserva tu estancia en el Radisson Blue Resort Gran Canaria o contacta con nosotros. Estamos en Patalavaca, Gran Canaria.">
+    <meta name="keywords" content="reservar hotel Gran Canaria, contacto Radisson Blue, dirección hotel Patalavaca, teléfono hotel">
+
+    <!-- Ícono e integración de la plantilla CSS -->
+    <link rel="icon" type="image/x-icon" href="Icono/Icon_Blue.png">
+    <link rel="stylesheet" href="Estilo/style.css">
+</head>
+
+<body>
+
+    <!-- CABECERA DE LA WEB -->
+    <header id="site-header">
+        <div class="container">
+            <div class="logo">Radisson Blue Resort</div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="habitaciones.html">Habitaciones</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto y Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- CABECERA DE PÁGINA -->
+        <section class="page-header" style="--page-header-image: url('Imagenes/suite_presidencial.png');">
+            <div class="container">
+                <p class="eyebrow">Estamos aquí para ayudarte</p>
+                <h1>Contacto y Reservas</h1>
+                <p>Reserva directamente con nosotros o escríbenos para resolver cualquier duda sobre tu próxima estancia.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE RESERVAS -->
+        <section id="reservar" class="booking">
+            <div class="container">
+                <header>
+                    <p class="eyebrow">Planifica tu estancia</p>
+                    <h2>Reserva tu habitación</h2>
+                </header>
+
+                <form action="#" method="get">
+                    <div>
+                        <label for="check-in">Entrada</label>
+                        <input type="date" id="check-in" name="check-in" required>
+                    </div>
+
+                    <div>
+                        <label for="check-out">Salida</label>
+                        <input type="date" id="check-out" name="check-out" required>
+                    </div>
+
+                    <div>
+                        <label for="guests">Huéspedes</label>
+                        <select id="guests" name="guests">
+                            <option value="1">1 huésped</option>
+                            <option value="2" selected>2 huéspedes</option>
+                            <option value="3">3 huéspedes</option>
+                            <option value="4">4 huéspedes</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Comprobar disponibilidad</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CONTACTO: DATOS + FORMULARIO -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-layout">
+
+                    <!-- DATOS DE CONTACTO -->
+                    <div class="contact-info">
+                        <p class="eyebrow">Hablemos</p>
+                        <h2>¿Tienes alguna pregunta?</h2>
+                        <p>Nuestro equipo está disponible para ayudarte con reservas, eventos especiales o cualquier consulta sobre el resort.</p>
+
+                        <div class="contact-info-block">
+                            <h3>Dirección</h3>
+                            <p>Barranco de la Verga, s/n<br>35129 Patalavaca, Gran Canaria, España</p>
+                        </div>
+
+                        <div class="contact-info-block">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:+34928150400">+34 928 150 400</a></p>
+                        </div>
+
+                        <div class="contact-info-block">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info.gran.canaria@radissonblue.com">info.gran.canaria@radissonblue.com</a></p>
+                        </div>
+
+                        <div class="contact-info-block">
+                            <h3>Recepción</h3>
+                            <p>Atención al huésped disponible las 24 horas, los 365 días del año.</p>
+                        </div>
+                    </div>
+
+                    <!-- FORMULARIO DE CONTACTO -->
+                    <form class="contact-form" action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto">
+                                <option value="reserva">Consulta sobre una reserva</option>
+                                <option value="eventos">Eventos y celebraciones</option>
+                                <option value="grupos">Grupos y empresas</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" required></textarea>
+                        </div>
+
+                        <button type="submit">Enviar mensaje</button>
+                    </form>
+
+                </div>
+
+                <!-- MAPA -->
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-15.7505%2C27.8186%2C-15.7105%2C27.8386&amp;layer=mapnik&amp;marker=27.8286%2C-15.7305"
+                        loading="lazy"
+                        title="Ubicación del Radisson Blue Resort Gran Canaria">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="site-footer">
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Marca y lema -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        RADISSON BLUE
+                    </a>
+                    <p>Tu refugio de lujo y tranquilidad frente al Atlántico.</p>
+                </div>
+
+                <!-- Navegación del pie de página -->
+                <nav aria-label="Navegación del pie de página">
+                    <h2>Navegación</h2>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="habitaciones.html">Habitaciones</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contacto y Reservas</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Datos de contacto reales/adaptados -->
+                <div class="footer-contact">
+                    <h2>Contacto</h2>
+                    <address>
+                        <p>
+                            Barranco de la Verga, s/n<br>
+                            35129 Patalavaca, Gran Canaria<br>
+                            España
+                        </p>
+                        <p><a href="tel:+34928150400">+34 928 150 400</a></p>
+                        <p><a href="mailto:info.gran.canaria@radissonblue.com">info.gran.canaria@radissonblue.com</a></p>
+                    </address>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="footer-social">
+                    <h2>Síguenos</h2>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">TikTok</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Enlaces legales y derechos -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Radisson Blue Resort Gran Canaria. Todos los derechos reservados.</p>
+                <nav aria-label="Información legal">
+                    <ul>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Aviso legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
