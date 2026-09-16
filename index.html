@@ -241,5 +241,30 @@
     </div>
 </footer>
 
+    <!-- AVISO DE COOKIES -->
+    <section class="cookie-banner" aria-label="Aviso de cookies">
+        <div class="cookie-content">
+            <div>
+                <h2>Uso de cookies</h2>
+                <p>Utilizamos cookies para mejorar tu experiencia en nuestra web. Puedes aceptar o rechazar su uso.</p>
+            </div>
+            <div class="cookie-actions">
+                <button type="button" class="cookie-choice">Rechazar</button>
+                <button type="button" class="cookie-choice cookie-accept">Aceptar</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cookieBanner = document.querySelector(".cookie-banner");
+        const cookieButtons = document.querySelectorAll(".cookie-choice");
+
+        cookieButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                cookieBanner.classList.add("cookie-banner-hidden");
+            });
+        });
+    </script>
+
 </body>
 </html>

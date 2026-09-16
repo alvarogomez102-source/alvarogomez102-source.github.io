@@ -605,6 +605,77 @@ h2 {
 
 
 /* =========================================================
+    COOKIE BANNER - Aviso de cookies
+    ========================================================= */
+
+.cookie-banner {
+    position: fixed;
+    z-index: 50;
+    right: 24px;
+    bottom: 24px;
+    width: min(440px, calc(100% - 48px));
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    box-shadow: 0 18px 45px rgba(7, 19, 38, 0.18);
+}
+
+.cookie-banner-hidden {
+    display: none;
+}
+
+.cookie-content {
+    display: grid;
+    gap: 18px;
+}
+
+.cookie-content h2 {
+    margin-bottom: 8px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.cookie-content p {
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cookie-actions button {
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid var(--color-dark);
+    background: transparent;
+    color: var(--color-dark);
+    cursor: pointer;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all var(--transition);
+}
+
+.cookie-actions button:hover,
+.cookie-actions .cookie-accept {
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+.cookie-actions .cookie-accept:hover {
+    background: var(--color-green);
+    border-color: var(--color-green);
+}
+
+
+/* =========================================================
     PAGE HEADER - Cabecera de páginas interiores
     ========================================================= */
 
@@ -1033,6 +1104,18 @@ h2 {
     }
     .footer-bottom nav ul {
         flex-wrap: wrap;
+    }
+    .cookie-banner {
+        right: 16px;
+        bottom: 16px;
+        width: calc(100% - 32px);
+        padding: 20px;
+    }
+    .cookie-actions {
+        flex-direction: column;
+    }
+    .cookie-actions button {
+        width: 100%;
     }
     .page-header {
         min-height: 320px;
