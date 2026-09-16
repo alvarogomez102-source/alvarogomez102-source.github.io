@@ -867,6 +867,38 @@ h2 {
 
 
 /* =========================================================
+    DEMO WARNING - Aviso de demostración
+    ========================================================= */
+
+.demo-warning {
+    padding: 110px 0;
+    background: var(--color-cream);
+}
+
+.demo-warning-card {
+    max-width: 760px;
+    margin-inline: auto;
+    padding: 55px;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    text-align: center;
+}
+
+.demo-warning-card h2 {
+    margin-bottom: 22px;
+}
+
+.demo-warning-card p:not(.eyebrow) {
+    margin-bottom: 18px;
+    color: #4a5568;
+}
+
+.demo-warning-card .button {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
     CONTACT - Página de contacto
     ========================================================= */
 
@@ -1123,8 +1155,12 @@ h2 {
     .rooms-full,
     .services,
     .services-highlight,
-    .contact-section {
+    .contact-section,
+    .demo-warning {
         padding: 70px 0;
+    }
+    .demo-warning-card {
+        padding: 35px 24px;
     }
     .room-detail-amenities {
         grid-template-columns: 1fr;
