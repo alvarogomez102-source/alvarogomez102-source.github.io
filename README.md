@@ -57,15 +57,7 @@ No necesitas instalar nada antes: ni XAMPP, ni PHP, ni MySQL, ni permisos de adm
 
 **Requisitos:** Windows 10/11 de 64 bits, conexión a internet y ~1,5 GB libres.
 
-### Opción A · Desde este repositorio (descargado o clonado)
-
-```
-.\install.cmd
-```
-
-*(o haz doble clic sobre `install.cmd`)*
-
-### Opción B · Directamente desde GitHub, sin descargar nada
+### Directamente desde GitHub, sin descargar nada
 
 Abre **PowerShell** y pega:
 
