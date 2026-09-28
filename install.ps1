@@ -240,11 +240,83 @@ CREATE TABLE IF NOT EXISTS $DbName.contacto (
         if ($c -ne 0) { throw "Could not create database/table:`n" + (Read-Log $log) }
         Say "Database '$DbName' + table 'contacto' ready"
 
-        # ---------- 7. run ----------
+        # ---------- 7. admin page (/admin, user admin / password admin) ----------
+        # Generated outside the project so the public GitHub Pages site never ships it.
+        $srv = Join-Path $base 'server'; New-Item -ItemType Directory -Force -Path $srv | Out-Null
+        $utf8 = New-Object Text.UTF8Encoding($false)
+        [IO.File]::WriteAllText("$srv\router.php", @'
+<?php
+$path = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+if ($path === '/admin') { require __DIR__ . '/admin.php'; return true; }
+return false; // everything else: normal static/PHP handling from the project folder
+'@, $utf8)
+        [IO.File]::WriteAllText("$srv\admin.php", @'
+<?php
+// Local-only admin viewer (server is bound to 127.0.0.1). Login: admin / admin
+$u = $_SERVER['PHP_AUTH_USER'] ?? '';
+$p = $_SERVER['PHP_AUTH_PW'] ?? '';
+if (!hash_equals('admin', $u) || !hash_equals('admin', $p)) {
+    header('WWW-Authenticate: Basic realm="Admin"');
+    http_response_code(401);
+    echo 'Authentication required';
+    exit;
+}
+mysqli_report(MYSQLI_REPORT_OFF);
+$db = @new mysqli('localhost', 'root', '', 'radisson_db');
+if ($db->connect_error) { http_response_code(500); die('Database error: ' . htmlspecialchars($db->connect_error)); }
+$db->set_charset('utf8mb4');
+
+$q = trim($_GET['q'] ?? '');
+if ($q !== '') {
+    $like = '%' . $q . '%';
+    $st = $db->prepare('SELECT * FROM contacto WHERE nombre LIKE ? OR apellidos LIKE ? OR email LIKE ? OR telefono LIKE ? OR asunto LIKE ? OR mensaje LIKE ? ORDER BY id DESC');
+    $st->bind_param('ssssss', $like, $like, $like, $like, $like, $like);
+} else {
+    $st = $db->prepare('SELECT * FROM contacto ORDER BY id DESC');
+}
+$st->execute();
+$res  = $st->get_result();
+$cols = array_map(fn($f) => $f->name, $res->fetch_fields());
+$rows = $res->fetch_all(MYSQLI_ASSOC);
+$h = fn($s) => htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
+?><!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><title>Admin - contacto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ body{font-family:system-ui,Segoe UI,sans-serif;margin:0;background:#f4f6f9;color:#222}
+ header{background:#1a4373;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+ main{padding:24px}
+ form{margin-bottom:16px;display:flex;gap:8px}
+ input[type=text]{flex:1;max-width:360px;padding:8px;border:1px solid #bbb;border-radius:4px}
+ button,a.btn{padding:8px 14px;background:#1a4373;color:#fff;border:0;border-radius:4px;text-decoration:none;cursor:pointer;font-size:14px}
+ .wrap{overflow-x:auto;background:#fff;border-radius:6px;box-shadow:0 1px 3px #0002}
+ table{border-collapse:collapse;width:100%}
+ th,td{padding:8px 12px;border-bottom:1px solid #e3e6ea;text-align:left;vertical-align:top;font-size:14px}
+ th{background:#eef1f5;position:sticky;top:0} td.msg{max-width:420px;white-space:pre-wrap}
+</style></head><body>
+<header><strong>Admin &middot; mensajes de contacto</strong><span><?= count($rows) ?> resultado(s)</span></header>
+<main>
+ <form method="get" action="/admin">
+  <input type="text" name="q" value="<?= $h($q) ?>" placeholder="Buscar nombre, email, asunto, mensaje...">
+  <button>Buscar</button><?php if ($q !== ''): ?><a class="btn" href="/admin">Limpiar</a><?php endif; ?>
+ </form>
+ <div class="wrap"><table>
+  <tr><?php foreach ($cols as $c): ?><th><?= $h($c) ?></th><?php endforeach; ?></tr>
+  <?php foreach ($rows as $r): ?>
+   <tr><?php foreach ($cols as $c): ?><td class="<?= $c === 'mensaje' ? 'msg' : '' ?>"><?= $h($r[$c]) ?></td><?php endforeach; ?></tr>
+  <?php endforeach; ?>
+  <?php if (!$rows): ?><tr><td colspan="<?= max(1, count($cols)) ?>">Sin datos.</td></tr><?php endif; ?>
+ </table></div>
+</main></body></html>
+'@, $utf8)
+
+        # ---------- 8. run ----------
         $url = "http://127.0.0.1:$webPort/"
-        Write-Host "`n=== Running: $url   (press Ctrl+C to stop) ===" -ForegroundColor Green
+        Write-Host "`n=== Running: $url" -ForegroundColor Green
+        Write-Host "=== Admin:   ${url}admin   (user: admin / password: admin)" -ForegroundColor Green
+        Write-Host "=== Press Ctrl+C to stop ===`n" -ForegroundColor Green
         Start-Process $url
-        & $php -S "127.0.0.1:$webPort" -t $site
+        & $php -S "127.0.0.1:$webPort" -t $site "$srv\router.php"
         return $true
     }
     catch {
